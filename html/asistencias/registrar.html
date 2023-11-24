@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Registro</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="../../index.html">
+            <div class="logo">
+                <img src="../../img/logo.png" alt="logo">
+            </div>
+        </a>
+
+        <div class="menu">
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle">Asistencias <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="../asistencias/consulta.html">Consultar Asistencias</a>
+                    <a href="../asistencias/registrar.html">Registrar</a>
+                </div>
+            </div>
+            <a href="../reportes/generarReporte.html">Reportes</a>
+            <a href="#" class="ultimo-item">Cerrar Sesión <i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </div>
+
+    <h1 class="titulo">Registro de asistencia</h1>
+
+    <div class="contenedor">
+        <div class="contenedor-opciones">
+            <div class="contenedor-boton">
+                <button class="btn"><span>Guardar <i class="fas fa-save"></i></span></button>
+            </div>
+
+            <div class="contenedor-cmb">
+                <select id="cmbGrupo" name="cmbGrupo" title="Grupos">
+                    <option>Seleccione un grupo</option>
+                </select>
+
+                <select id="cmbMateria" name="cmbMateria" title="Materias">
+                    <option>Seleccione la materia</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="contenedor-tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Alumno</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Asistencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nombre del alumno 1</td>
+                        <td>Fecha 1</td>
+                        <td>Hora 1</td>
+                        <td>Asistencia 1</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre del alumno 2</td>
+                        <td>Fecha 2</td>
+                        <td>Hora 2</td>
+                        <td>Asistencia 2</td>
+                    </tr>
+                    <!-- Puedes añadir más filas según sea necesario -->
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
