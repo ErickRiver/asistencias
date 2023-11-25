@@ -31,7 +31,9 @@ body {
     background-color: var(--clr-blanco2);
 }
 
-input, p, select{
+input,
+p,
+select {
     font-size: 16px;
 }
 
@@ -142,4 +144,30 @@ input, p, select{
 
 .btn:active::after {
     border-bottom-color: var(--clr-verde-active);
+}
+
+@media screen and (max-width: 500px) {
+    .contenedor-login {
+        flex-direction: column;
+        padding: 50px;
+    }
+
+    .contenedor-img {
+        width: 60%;
+    }
+
+    .contenedor-img img {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .contenedor-login {
+        padding: 20px;
+    }
+
+    .contenedor-formulario h1 {
+        font-size: 20px;
+    }
 }

@@ -14,7 +14,7 @@
     --clr-verde-hover: #50BB27;
     --clr-verde-disabled: #295A1A;
 
-    --clr-negro: #373737;
+    --clr-negro: #18191B;
     --clr-gris1: #646464;
     --clr-gris2: #979797;
     --clr-gris3: #CACACA;
@@ -26,6 +26,10 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: var(--clr-blanco2);
+}
+
+#navbar-icon {
+    display: none;
 }
 
 .navbar {
@@ -52,7 +56,7 @@ body {
     color: black;
 }
 
-.navbar .menu > :last-child {
+.navbar .menu> :last-child {
     margin-left: auto;
     padding: 0px 30px 0px 0px;
 }
@@ -60,14 +64,18 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    min-width: 160px;
+    min-width: 160px auto;
     z-index: 1;
     background-color: var(--clr-blanco2);
     border: 1px solid black;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+    position: fixed;
+    margin: 0 auto;
 }
 
 .dropdown-content a {
@@ -96,7 +104,7 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    width: 100%; 
+    width: 100%;
     max-width: 500px;
     height: 90vh;
     text-align: center;
@@ -105,4 +113,89 @@ body {
 .contenedor-img img {
     max-width: 80%;
     height: auto;
+}
+
+@media screen and (max-width: 500px) {
+    #navbar-icon {
+        display: flex;
+        position: fixed;
+        z-index: 5;
+        background-color: var(--clr-yellow);
+        border-radius: 10px;
+        top: 0;
+        padding: 10px;
+        font-size: 32px;
+        color: var(--clr-white);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    #navbar-icon:hover {
+        transform: scale(1.2);
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--clr-negro);
+        height: 100vh;
+        width: 50%;
+        left: -50%;
+        position: absolute;
+        z-index: 10;
+        gap: 20px;
+        transition: .3s ease-in-out all;
+    }
+
+    .navbar.active {
+        display: flex;
+        left: 0;
+    }
+
+    .logo img {
+        width: 100px;
+        margin: 50px 10px;
+    }
+
+    .menu {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+        height: 40vh;
+    }
+
+    .menu .dropdown a, .menu a {
+        width: 100%;
+        color: var(--clr-blanco2);
+        text-align: center;
+    }
+
+    .navbar .menu> :last-child {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .dropdown-content {
+        background-color: var(--clr-negro);
+        border: 1px solid var(--clr-blanco2);
+    }
+
+    .dropdown-content a:hover {
+        background-color: var(--clr-verde);
+    }
+
+}
+
+@media screen and (max-width: 300px) { 
+    .contenedor-formulario h1 {
+        font-size: 20px;
+    }
+    
+    .navbar {
+        width: 80%;
+        left: -80%;
+    }
 }
