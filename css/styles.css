@@ -64,7 +64,7 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    min-width: 160px auto;
+    min-width: 60%;
     z-index: 1;
     background-color: var(--clr-blanco2);
     border: 1px solid black;
@@ -73,7 +73,10 @@ body {
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     margin: 0 auto;
 }
@@ -150,6 +153,7 @@ body {
 
     .navbar.active {
         display: flex;
+        position: fixed;
         left: 0;
     }
 
@@ -167,7 +171,8 @@ body {
         height: 40vh;
     }
 
-    .menu .dropdown a, .menu a {
+    .menu .dropdown a,
+    .menu a {
         width: 100%;
         color: var(--clr-blanco2);
         text-align: center;
@@ -189,13 +194,18 @@ body {
 
 }
 
-@media screen and (max-width: 300px) { 
+@media screen and (max-width: 300px) {
     .contenedor-formulario h1 {
         font-size: 20px;
     }
-    
+
     .navbar {
         width: 80%;
         left: -80%;
+    }
+
+    .dropdown-content {
+        min-width: 100px;
+        width: 60%;
     }
 }
