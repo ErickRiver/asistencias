@@ -41,7 +41,9 @@ body {
     max-width: 500px;
 }
 
-input, p, select{
+input,
+p,
+select {
     font-size: 16px;
     background-color: transparent;
 }
@@ -117,7 +119,8 @@ input, p, select{
     padding: 0;
 }
 
-.contenedor, .contenedor2 {
+.contenedor,
+.contenedor2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,7 +140,8 @@ input, p, select{
     gap: 30px;
 }
 
-.contenedor-formulario input, .contenedor-formulario select {
+.contenedor-formulario input,
+.contenedor-formulario select {
     border: none;
     border-bottom: 1px solid black;
     outline: none;
@@ -206,26 +210,27 @@ input, p, select{
     align-items: center;
     width: 100%;
     gap: 20px;
+    margin: 20px;
 }
 
 .contenedor-opciones input {
     border-radius: 8px;
     border: 1px solid black;
     height: 30px;
-}   
+}
 
 .contenedor-opciones #txtBuscar {
     border: none;
     border-bottom: 2px solid black;
     border-radius: 0;
     outline: none;
-} 
+}
 
-.contenedor-opciones .contenedor-boton{
+.contenedor-opciones .contenedor-boton {
     width: 100%;
 }
 
-.contenedor-opciones .contenedor-boton .btn{
+.contenedor-opciones .contenedor-boton .btn {
     margin: 0;
 }
 
@@ -252,12 +257,13 @@ input, p, select{
 
 .contenedor-tabla {
     width: 100%;
-    margin: 20px;
+    max-height: 50vh;
 }
 
 .contenedor-tabla table {
     width: 100%;
     border-collapse: collapse;
+    overflow: scroll;
 }
 
 .contenedor-tabla table thead {
@@ -309,6 +315,34 @@ input, p, select{
 }
 
 @media screen and (max-width: 500px) {
+    .contenedor-opciones {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedor-opciones .contenedor-boton {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .contenedor-opciones .contenedor-boton .btn {
+        margin: 0 auto;
+    }
+
+    .contenedor-cmb {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .contenedor-opciones select {
+        max-width: 100%;
+    }
+
     .titulo {
         font-size: 24px;
         border: none;
@@ -364,9 +398,10 @@ input, p, select{
         gap: 30px;
         width: 100%;
         height: 40vh;
-    }   
+    }
 
-    .menu .dropdown a, .menu a {
+    .menu .dropdown a,
+    .menu a {
         width: 100%;
         color: var(--clr-blanco2);
         text-align: center;
@@ -385,13 +420,68 @@ input, p, select{
     .dropdown-content a:hover {
         background-color: var(--clr-verde);
     }
+
+    .contenedor-tabla {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+    }
+
+    tbody tr td:first-child {
+        background-color: #a8e6cf;
+        /* Color verde */
+    }
+
+    .contenedor-materias {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-opciones #dpFecha {
+        width: 100%;
+    }
+
+    .input-container {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 300px) {
     .titulo {
         font-size: 16px;
     }
-    
+
     .navbar {
         width: 80%;
         left: -80%;
