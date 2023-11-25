@@ -263,7 +263,6 @@ select {
 .contenedor-tabla table {
     width: 100%;
     border-collapse: collapse;
-    overflow: scroll;
 }
 
 .contenedor-tabla table thead {
