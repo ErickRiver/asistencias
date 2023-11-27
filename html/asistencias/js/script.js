@@ -14,3 +14,4 @@ function closeNavbarOutsideClick(event) {
 }
 
 document.addEventListener('click', closeNavbarOutsideClick);
+
