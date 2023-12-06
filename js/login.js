@@ -12,3 +12,12 @@ function togglePassword() {
         icon.classList.add("fa-lock");
     }
 }
+
+document.getElementById('btnLogin').addEventListener('click', function () {
+    var contenedor = document.querySelector('.contenedor-login');
+    contenedor.classList.add('animate__fadeOutUp');
+
+    setTimeout(function () {
+        window.location.href = 'index.html';
+    }, 1000);
+});

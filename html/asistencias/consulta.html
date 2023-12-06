@@ -7,6 +7,10 @@
     <link rel="icon" href="../../img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <link rel="stylesheet" href="css/styles.css">
     <title>Consulta</title>
 </head>
@@ -30,121 +34,275 @@
                 </div>
             </div>
             <a href="../reportes/generarReporte.html">Reportes</a>
+            <a href="../listas/listas.html">Listas</a>
             <a href="#" class="ultimo-item">Cerrar Sesión <i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
 
     <h1 class="titulo">Consulta de asistencia</h1>
 
-    <div class="contenedor2">
-        <div class="contenedor-opciones">
-            <div class="input-container">
-                <input type="search" placeholder="Buscar alumno" id="txtBuscar"/>
-                <i class="fas fa-search"></i>
-            </div>
+    <div class="slider">
+        <div class="slide">
+            <h2 class="titulo-secundario">Semana 1</h2>
+            <div class="contenedor">
+                <div class="contenedor-opciones">
+                    <div class="input-container">
+                        <input type="search" placeholder="Buscar alumno" id="txtBuscar" />
+                        <i class="fas fa-search"></i>
+                    </div>
 
-            <div class="contenedor-cmb">
-                <select id="cmbGrupo" name="cmbGrupo" title="Grupos">
-                    <option>Seleccione un grupo</option>
-                </select>
+                    <div class="contenedor-cmb">
+                        <select id="cmbGrupo" name="cmbGrupos" title="Grupos">
+                            <option>Grupo</option>
+                        </select>
 
-                <select id="cmbMateria" name="cmbMateria" title="Materias">
-                    <option>Seleccione la materia</option>
-                </select>
-            </div>
+                        <select id="cmbMateria" name="cmbMaterias" title="Materias">
+                            <option>Materia</option>
+                        </select>
+                    </div>
 
-            <input type="date" title="Fecha" id="dpFecha">
-        </div>
+                    <div class="contenedor-fecha">
+                        <label for="fechaInicio">Fecha de inicio</label>
+                        <input type="date" id="dpFechaInicio" title="Fecha de inicio">
+                    </div>
 
-        <div class="contenedor-tabla">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Alumno</th>
-                        <th>Fecha</th>
-                        <th>Hora</th>
-                        <th>Asistencia</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Nombre del alumno 1</td>
-                        <td>Fecha 1</td>
-                        <td>Hora 1</td>
-                        <td>J</td>
-                    </tr>
-                    <tr>
-                        <td>Nombre del alumno 2</td>
-                        <td>Fecha 2</td>
-                        <td>Hora 2</td>
-                        <td>F</td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    </div>
+                    <div class="contenedor-fecha">
+                        <label for="fechaFin">Fecha fin</label>
+                        <input type="date" id="dpFechaFin" title="Fecha fin">
+                    </div>
 
-    <div class="contenedor">
-        <h3>No existe ningún grupo disponible para consultar su asistencia</h3>
+                </div>
 
-        <p for="nombreGrupo"><strong>Registrar nuevo grupo</strong></p>
-        <div class="contenedor-formulario">
-            <input type="text" id="txtGrupo" name="txtGrupo" placeholder="Nombre del grupo" required>
-
-            <select id="cmbPeriodo" name="cmbPeriodo" title="Cuatrimestre">
-                <option>Seleccione un cuatrimestre</option>
-                <option value="1">Septiembre-Diciembre</option>
-                <option value="2">Enero-Abril</option>
-                <option value="3">Mayo-Agosto</option>
-            </select>
-            <button onclick="seleccionarExcel();" class="btn"><span>Lista de alumnos <i class="fas fa-plus-circle"></i></span></button>
-        </div>
-
-        <p><strong>Materias</strong></p>
-        <div class="contenedor-materias">
-            <div class="contenedor-checkbox">
-                <input type="checkbox" id="grupo1" name="grupo1" value="Inglés VI">
-                <label for="grupo1">Inglés VI</label>
-            </div>
-
-            <div class="contenedor-checkbox">
-                <input type="checkbox" id="grupo2" name="grupo2" value="Experiencia de usuario">
-                <label for="grupo2">Experiencia de usuario</label>
-            </div>
-
-            <div class="contenedor-checkbox">
-                <input type="checkbox" id="grupo3" name="grupo3" value="Arquitecturas de software">
-                <label for="grupo3">Arquitecturas de software</label>
-            </div>
-
-            <div class="contenedor-checkbox">
-                <input type="checkbox" id="grupo4" name="grupo4" value="Matemáticas">
-                <label for="grupo4">Matemáticas</label>
-            </div>
-
-            <div class="contenedor-checkbox">
-                <input type="checkbox" id="grupo5" name="grupo5" value="Metodologías para el desarrollo de proyectos">
-                <label for="grupo5">Metodologías para el desarrollo de proyectos</label>
-            </div>
-
-            <div class="contenedor-checkbox">
-                <input type="checkbox" id="grupo6" name="grupo6" value="Administración del tiempo">
-                <label for="grupo6">Administración del tiempo</label>
-            </div>
-
-            <div class="contenedor-checkbox">
-                <input type="checkbox" id="grupo7" name="grupo7" value="Seguridad informática">
-                <label for="grupo7">Seguridad informática</label>
-            </div>
-
-            <div class="contenedor-checkbox">
-                <input type="checkbox" id="grupo8" name="grupo8" value="Tutoreo">
-                <label for="grupo8">Tutoreo</label>
+                <div class="contenedor-tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Alumno</th>
+                                <th>Lunes: 5:10</th>
+                                <th>Lunes: 6:00</th>
+                                <th>Martes: 6:50</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nombre del alumno 1</td>
+                                <td>J</td>
+                                <td>F</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre del alumno 2</td>
+                                <td>F</td>
+                                <td>R</td>
+                                <td>J</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre del alumno 3</td>
+                                <td>A</td>
+                                <td>J</td>
+                                <td>F</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
-        <button class="btn"><span>Registrar <i class="fas fa-plus-circle"></i></span></button>
+        <div class="slide">
+            <h2 class="titulo-secundario">Semana 2</h2>
+            <div class="contenedor">
+                <div class="contenedor-opciones">
+                    <div class="input-container">
+                        <input type="search" placeholder="Buscar alumno" id="txtBuscar" />
+                        <i class="fas fa-search"></i>
+                    </div>
+
+                    <div class="contenedor-cmb">
+                        <select id="cmbGrupo" name="cmbGrupos" title="Grupos">
+                            <option>Grupo</option>
+                        </select>
+
+                        <select id="cmbMateria" name="cmbMaterias" title="Materias">
+                            <option>Materia</option>
+                        </select>
+                    </div>
+
+                    <div class="contenedor-fecha">
+                        <label for="fechaInicio">Fecha de inicio</label>
+                        <input type="date" id="dpFechaInicio" title="Fecha de inicio">
+                    </div>
+
+                    <div class="contenedor-fecha">
+                        <label for="fechaFin">Fecha fin</label>
+                        <input type="date" id="dpFechaFin" title="Fecha fin">
+                    </div>
+
+                </div>
+
+                <div class="contenedor-tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Alumno</th>
+                                <th>Lunes: 5:10</th>
+                                <th>Lunes: 6:00</th>
+                                <th>Martes: 6:50</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nombre del alumno 1</td>
+                                <td>J</td>
+                                <td>F</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre del alumno 2</td>
+                                <td>F</td>
+                                <td>R</td>
+                                <td>J</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre del alumno 3</td>
+                                <td>A</td>
+                                <td>J</td>
+                                <td>F</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <h2 class="titulo-secundario">Semana 3</h2>
+            <div class="contenedor">
+                <div class="contenedor-opciones">
+                    <div class="input-container">
+                        <input type="search" placeholder="Buscar alumno" id="txtBuscar" />
+                        <i class="fas fa-search"></i>
+                    </div>
+
+                    <div class="contenedor-cmb">
+                        <select id="cmbGrupo" name="cmbGrupos" title="Grupos">
+                            <option>Grupo</option>
+                        </select>
+
+                        <select id="cmbMateria" name="cmbMaterias" title="Materias">
+                            <option>Materia</option>
+                        </select>
+                    </div>
+
+                    <div class="contenedor-fecha">
+                        <label for="fechaInicio">Fecha de inicio</label>
+                        <input type="date" id="dpFechaInicio" title="Fecha de inicio">
+                    </div>
+
+                    <div class="contenedor-fecha">
+                        <label for="fechaFin">Fecha fin</label>
+                        <input type="date" id="dpFechaFin" title="Fecha fin">
+                    </div>
+
+                </div>
+
+                <div class="contenedor-tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Alumno</th>
+                                <th>Lunes: 5:10</th>
+                                <th>Lunes: 6:00</th>
+                                <th>Martes: 6:50</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nombre del alumno 1</td>
+                                <td>J</td>
+                                <td>F</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre del alumno 2</td>
+                                <td>F</td>
+                                <td>R</td>
+                                <td>J</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre del alumno 3</td>
+                                <td>A</td>
+                                <td>J</td>
+                                <td>F</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <h2 class="titulo-secundario">Semana 4</h2>
+            <div class="contenedor">
+                <div class="contenedor-opciones">
+                    <div class="input-container">
+                        <input type="search" placeholder="Buscar alumno" id="txtBuscar" />
+                        <i class="fas fa-search"></i>
+                    </div>
+
+                    <div class="contenedor-cmb">
+                        <select id="cmbGrupo" name="cmbGrupos" title="Grupos">
+                            <option>Grupo</option>
+                        </select>
+
+                        <select id="cmbMateria" name="cmbMaterias" title="Materias">
+                            <option>Materia</option>
+                        </select>
+                    </div>
+
+                    <div class="contenedor-fecha">
+                        <label for="fechaInicio">Fecha de inicio</label>
+                        <input type="date" id="dpFechaInicio" title="Fecha de inicio">
+                    </div>
+
+                    <div class="contenedor-fecha">
+                        <label for="fechaFin">Fecha fin</label>
+                        <input type="date" id="dpFechaFin" title="Fecha fin">
+                    </div>
+
+                </div>
+
+                <div class="contenedor-tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Alumno</th>
+                                <th>Lunes: 5:10</th>
+                                <th>Lunes: 6:00</th>
+                                <th>Martes: 6:50</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nombre del alumno 1</td>
+                                <td>J</td>
+                                <td>F</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre del alumno 2</td>
+                                <td>F</td>
+                                <td>R</td>
+                                <td>J</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre del alumno 3</td>
+                                <td>A</td>
+                                <td>J</td>
+                                <td>F</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="js/script.js"></script>

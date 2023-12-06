@@ -30,6 +30,7 @@
                 </div>
             </div>
             <a href="../reportes/generarReporte.html">Reportes</a>
+            <a href="../listas/listas.html">Listas</a>
             <a href="#" class="ultimo-item">Cerrar Sesión <i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
@@ -44,14 +45,27 @@
             </div>
 
             <div class="contenedor-select">
-                <select name="materias" id="materias" title="Materias">
+                <div class="contenedor-fecha">
+                    <label for="fechaInicio"><strong>Fecha de inicio</strong></label>
+                    <input type="date" id="dpFechaInicio" title="Fecha de inicio">
+                </div>
+
+                <div class="contenedor-fecha">
+                    <label for="fechaFin"><strong>Fecha fin</strong></label>
+                    <input type="date" id="dpFechaFin" title="Fecha fin">
+                </div>
+
+            </div>
+
+            <div class="contenedor-select">
+                <select name="materias" id="cmbMaterias" title="Materias">
                     <option>Grupo</option>
                     <option value="matematicas">Matemáticas</option>
                     <option value="historia">Historia</option>
                     <option value="ciencias">Ciencias</option>
                 </select>
 
-                <select name="grupos" id="grupos" title="Grupos">
+                <select name="grupos" id="cmbGrupos" title="Grupos">
                     <option>Materia</option>
                     <option value="grupoA">Grupo A</option>
                     <option value="grupoB">Grupo B</option>
@@ -59,7 +73,7 @@
                 </select>
             </div>
 
-            <button class="btn"><span>Generar <i class="fas fa-download"></i></span></button>
+            <button class="btn" id="btnGenerarReporte"><span>Generar reporte<i class="fas fa-download"></i></span></button>
         </div>
 
 
